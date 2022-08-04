@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 기본사용법 DOM</title>
+    <style>
+        /* 제목 */
+        h1{text-align:center;}
+        /* 소개박스 */
+        .myo{
+            position: absolute; top:0; left:0; margin:0; padding:0;
+            border:5px solid pink; width: 300px; height: 300px; border-radius: 50%; text-align:center; line-height: 150px;
+            /* 스두크/줄체 */
+            font: bold 30px/150px Verdana;
+            cursor:pointer;
+        }
+    </style>
+    <script>
+        // 인터널 코딩
+        /**********************************************************
+        [자바스크립트란?]
+        - 고정적인 html 구조, css로 디자인된 웹문서를 변경하기 위해
+        개발된 브라우저 전용 스크립트 언어
+        
+        [js코딩구역]
+        1. 인터널 방식
+        - html의 script태그 안에 기술함
+
+        2. 익스터널 (많이 씀)
+        - js 확장자를 가지는 외부파일에 기술함 <script src>
+
+        3. 이벤트 속성 인라인코딩
+        - html 이벤트 속성의 값으로 코딩함
+        예 : <h1 onClick="js코드">
+
+
+        [자바스크립트 역할]
+        1. html, css 변경
+        
+
+        [js 화면출력]
+        1. document.write(내용) -> html 문서 화면 상단출력
+        2. alert(); -> 팝업형식으로 출력
+        3. console.log(내용); -> 브라우저 콘솔창에 출력
+
+        [js 코드의 특징]
+        - js 명령어 실행코드는 만나는 즉시 실행된다
+        즉시실행 하지 않으려면 함수가 필요함
+        
+
+        [함수]
+        정의- 코드를 저장하는 메모리 공간
+        사용법 - function(전달변수){코드}
+        함수호출 - 함수명(); 전달값은 소괄호 안에 보냄
+
+        **********************************************************/
+        // document.write('<h1>나는 프엔</h1>');
+        // alert('FE');
+        // console.log('축하');
+
+        /*********************************************************
+        함수명: 나야나
+        기능: p태그 변경하기
+        *********************************************************/
+       function 나야나(){
+        // 1. 호출확인
+        console.log('함수야');
+
+       } /////////////// 나야나 함수 ///////////////
+
+
+        // ctrl K S -> 바로가기키
+        // ctrl alt b -> beautify
+        // onclick="나야나()"  ctrl space로 확인하기!
+
+    </script>
+</head>
+<body>
+    <h1>js 기본사용법</h1>
+    <p class="myo" onclick="나야나()">
+        나는 매일 생각한다<br>
+        도대체 <span id="name"></span>
+    </p>
+    
+    
+</body>
+</html>
