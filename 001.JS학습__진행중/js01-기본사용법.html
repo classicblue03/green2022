@@ -10,10 +10,11 @@
         /* 소개박스 */
         .myo{
             position: absolute; top:0; left:0; margin:0; padding:0;
-            border:5px solid pink; width: 300px; height: 300px; border-radius: 50%; text-align:center; line-height: 150px;
+            border:5px solid pink; width:400px; height:400px; border-radius: 50%; text-align:center; line-height: 150px;
             /* 스두크/줄체 */
             font: bold 30px/150px Verdana;
             cursor:pointer;
+            /* background:url(./images/kimbs.jpg) no-repeat top/cover; */
         }
     </style>
     <script>
@@ -63,11 +64,65 @@
         함수명: 나야나
         기능: p태그 변경하기
         *********************************************************/
+
+
+        // 220804
        function 나야나(){
         // 1. 호출확인
         console.log('함수야');
 
-       } /////////////// 나야나 함수 ///////////////
+        /* 2. html 변경
+        대상선정: .myo / #name
+        DOM을 사용하여 득정요소를 가져옴
+        document -> 전체문서를 담은 객체 */
+        document.getElementsByClassName('myo').item(0)
+        document.getElementById('name').innerHTML = '<img src="./images/kim.png" alt="김비서가 왜 그럴까?">'
+
+        // 3. css를 변경하려면 style을 호출하기
+        var 목표 =        
+            document.getElementsByClassName('myo').item(0); //첫번째 요소
+            목표.style.fontSize = "50px";
+            목표.style.color = "lime";
+            목표.style.transition = "2s";
+
+            목표.style.width = "550px";
+            목표.style.height = "550px";
+            목표.style.lineHeight = "200px";
+            목표.style.textShadow = "2px 2px 2px #000";
+
+            // 배경이미지
+            목표.style.background = "url(./images/kimbs.jpg) no-repeat top/cover";
+        
+            // 회전, 위치이동
+            목표.style.transform = "translate(-50%, -50%) rotate(360deg)";
+            목표.style.top = "50%";
+            목표.style.left = "50%";
+
+            // 대상선정 h1
+            var 타이틀 =
+            document.getElementsByTagName('h1')[0];
+
+
+            // 글자변경
+            // innerText = 변경할글자
+            타이틀.innerText = "220804";
+            타이틀.style.fontSize = "50px";
+            타이틀.style.transition = "ease-in-out 2s"; // 속성, 시간, easing, 지연시간 : 3초작동, 2초움직임
+            타이틀.style.color = "orange";
+
+            // 배경색 변경
+            var 바디 = document.body;
+            바디.style.backgroundColor = "skyblue";
+            바디.style.transition = "5s 5s"; 
+
+        }
+
+
+
+       // 변수 - 재활용을 목적으로, 특정데이터, 요소 등을 저장하는 공간
+
+
+        /////////////// 나야나 함수 ///////////////
 
 
         // ctrl K S -> 바로가기키
@@ -78,10 +133,11 @@
 </head>
 <body>
     <h1>js 기본사용법</h1>
-    <p class="myo" onclick="나야나()">
+    <p class="myo" onclick="나야나()" ondblclick="document.getElementsByClassName('myo')[0].style.background='url(./images/01.png)'">
         나는 매일 생각한다<br>
         도대체 <span id="name"></span>
     </p>
+    
     
     
 </body>
